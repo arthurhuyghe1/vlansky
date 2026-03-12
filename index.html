@@ -3,163 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vlansky - Le Skyblock Futuriste</title>
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Vlansky - Le Skyblock Futuriste Cyber-Glitch avec Slimefun">
+    <title>Vlansky | Le Skyblock Futuriste</title>
     
-    <!-- Google Fonts -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
     
-    <!-- Icônes FontAwesome -->
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Animations (AOS) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-    <!-- Fond quadrillé Cyberpunk -->
-    <div class="grid-background"></div>
+    <!-- Background Grid -->
+    <div class="cyber-grid"></div>
 
-    <!-- Navigation haute (Haut de page simpliste) -->
-    <nav class="top-nav">
-        <a href="#" class="top-login-link">Login</a>
-    </nav>
-
-    <main class="container">
-        
-        <!-- En-tête : Logo Vlansky Glitch & Sous-Titre -->
-        <header class="hero">
-            <div class="logo-container glitch">
-                <img src="assets/images/logo.png" alt="Vlansky Logo" class="main-logo">
+    <!-- MAIN HREO SECTION -->
+    <section class="hero" id="hero">
+        <div class="hero-content" data-aos="zoom-in" data-aos-duration="1500">
+            <img src="assets/images/logo.png" alt="Vlansky Logo" class="hero-logo glitch-img" />
+            <h1 class="hero-slogan" data-text="LE SKYBLOCK FUTURISTE">LE SKYBLOCK FUTURISTE</h1>
+            
+            <div class="ip-container">
+                <button class="btn-neon glowing-btn" id="copy-ip-btn">
+                    <i class="fa-solid fa-gamepad"></i> COPIER L'IP : PLAY.VLANSKY.OVH
+                </button>
+                <div class="feedback-msg" id="copy-feedback">IP copiée dans le presse-papier !</div>
             </div>
             
-            <div class="hero-title-group">
-                <h1 class="main-title">VLANSKY</h1>
-                <h2 class="sub-title">LE SKYBLOCK FUTURISTE</h2>
+            <div class="server-status">
+                <span class="status-dot"></span>
+                <span>Serveur En Ligne</span>
             </div>
-            
-            <button id="copy-ip-btn" class="ip-btn glitch-hover" data-ip="play.vlansky.ovh">
-                <i class="fa-solid fa-play"></i> IP: PLAY.VLANSKY.OVH
-                <span class="tooltip">Copier l'IP</span>
-            </button>
-        </header>
-
-        <!-- Grille de cartes Info (Haut - 3 colonnes) -->
-        <div class="cards-grid-top">
-            
-            <!-- Carte 1 -->
-            <div class="card info-card hover-cyan">
-                <div class="card-header">
-                    <i class="fa-solid fa-earth-americas icon-cyan"></i>
-                    <h3>LE PROJET</h3>
-                </div>
-                <div class="card-body">
-                    <p>Bienvenue dans la matrice. VLANSKY redéfinit le Skyblock avec des mécaniques <strong>Slimefun</strong> avancées (Exotic Garden, Infinity Expansion).</p>
-                </div>
-                <div class="glow-border"></div>
-            </div>
-
-            <!-- Carte 2 -->
-            <div class="card info-card hover-magenta">
-                <div class="card-header">
-                    <i class="fa-solid fa-gem icon-magenta"></i>
-                    <h3>FINANCEMENT</h3>
-                </div>
-                <div class="card-body">
-                    <p>100% communautaire. Chaque achat finance la machine dédiée et le développement continu d'addons inédits.</p>
-                </div>
-                <div class="glow-border"></div>
-            </div>
-
-            <!-- Carte 3 -->
-            <div class="card info-card hover-yellow">
-                <div class="card-header">
-                    <i class="fa-solid fa-lock icon-yellow"></i>
-                    <h3>SÉCURITÉ</h3>
-                </div>
-                <div class="card-body">
-                    <p>Transactions chiffrées par Tebex. Aucune donnée bancaire stockée. Un environnement anti-cheat omniprésent.</p>
-                </div>
-                <div class="glow-border"></div>
-            </div>
-            
-            <!-- Carte 4 -->
-            <div class="card info-card hover-orange">
-                <div class="card-header">
-                    <i class="fa-solid fa-bolt icon-orange"></i>
-                    <h3>LIVRAISON</h3>
-                </div>
-                <div class="card-body">
-                    <p>Automatique (< 5 min). Assurez-vous d'être connecté en jeu sur le serveur Skyblock.</p>
-                </div>
-                <div class="glow-border"></div>
-            </div>
-
         </div>
+        <div class="scroll-indicator">
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+    </section>
 
-        <!-- Section Marché Noir (Milieu - 2 Grandes Boutiques) -->
-        <section class="black-market-section">
-            <h2 class="section-title">ACCÈS AU <span class="text-magenta glitch" data-text="MARCHÉ NOIR">MARCHÉ NOIR</span></h2>
+    <!-- PRESENTATION SECTION -->
+    <section class="presentation" id="presentation">
+        <div class="container">
+            <div class="presentation-layout">
+                <div class="presentation-text" data-aos="fade-right">
+                    <h2 class="section-title glitch-hover">L'EXPÉRIENCE CYBER-GLITCH</h2>
+                    <p class="lead">Bienvenue sur <strong>Vlansky</strong>, un Skyblock pas comme les autres. Plongez dans un univers sombre, technologique et futuriste.</p>
+                    
+                    <ul class="feature-list">
+                        <li>
+                            <i class="fa-solid fa-cube text-cyan"></i>
+                            <div>
+                                <h3>Skyblock Repensé</h3>
+                                <p>Survie et développement de base sur une île dans le vide absolu, avec un mode de jeu axé sur l'optimisation et les machines.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-microchip text-magenta"></i>
+                            <div>
+                                <h3>Thème & Esthétique</h3>
+                                <p>Un Dark Mode assumé, avec des accents néons. Ressource pack entièrement custom ajoutant des objets en pixel art uniques comme nos billets de banque en circuits imprimés.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-chart-line text-blue"></i>
+                            <div>
+                                <h3>Progression & Économie</h3>
+                                <p>Plus de 150 challenges personnalisés. Système monétaire avec classements en temps réel et zone Casino interactive avec véritables machines à sous.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-crosshairs text-red"></i>
+                            <div>
+                                <h3>Combat PvP & PvE</h3>
+                                <p>Boss customisés aux mécaniques uniques et Warzone dédiée au chaos, abritant paradoxalement le "Centre de Contrôle" pacifique du staff.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Visual / Placeholder for a screenshot if needed -->
+                <div class="presentation-visual" data-aos="fade-left">
+                    <div class="cyber-frame">
+                        <div class="frame-content">
+                            <div class="hologram-effect"></div>
+                            <i class="fa-solid fa-city h-icon"></i>
+                            <span>INITIATING CORE PROTOCOLS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GAMEPLAY / SLIMEFUN SECTION -->
+    <section class="gameplay" id="gameplay">
+        <div class="container">
+            <h2 class="section-title center glitch-hover" data-aos="fade-up">TECHNOLOGIES & SLIMEFUN</h2>
+            <p class="section-subtitle center" data-aos="fade-up" data-aos-delay="100">Le gameplay est profondément enrichi par Slimefun et ses addons, vous offrant une infinité de possibilités sans aucun mod client.</p>
             
-            <div class="store-grid">
+            <div class="cards-grid">
+                <!-- Card 1 -->
+                <div class="cyber-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-icon cyan"><i class="fa-solid fa-bolt"></i></div>
+                    <h3>Énergie & Machines</h3>
+                    <p>Découvrez la puissance de base de Slimefun. Automatisez vos productions, générez de l'énergie et manipulez de nouveaux matériaux complexes pour propulser votre île dans l'ère industrielle.</p>
+                </div>
                 
-                <!-- Carte Grade -->
-                <div class="card store-card">
-                    <h3>GRADE</h3>
-                    <a href="https://vlansky.tebex.io/category/grades" class="btn store-btn">OUVRIR <i class="fa-solid fa-chevron-right"></i></a>
-                    <div class="glow-border"></div>
+                <!-- Card 2 -->
+                <div class="cyber-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-icon green"><i class="fa-solid fa-seedling"></i></div>
+                    <h3>Agriculture Mutante</h3>
+                    <p>Grâce à <strong>Exotic Garden</strong>, cultivez de nouvelles espèces végétales, arbres fruitiers et baies mutantes. La nature s'adapte à la technologie.</p>
                 </div>
 
-                <!-- Carte VCoins -->
-                <div class="card store-card">
-                    <h3>VCOINS</h3>
-                    <a href="https://vlansky.tebex.io/category/vcoins" class="btn store-btn">OUVRIR <i class="fa-solid fa-chevron-right"></i></a>
-                    <div class="glow-border"></div>
+                <!-- Card 3 -->
+                <div class="cyber-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card-icon magenta"><i class="fa-solid fa-infinity"></i></div>
+                    <h3>Puissance Infinie</h3>
+                    <p>Atteignez le end-game ultime avec <strong>Infinity Expansion</strong>. Débloquez un équipement hardcore et dominez les lois de la physique avec une puissance incommensurable.</p>
                 </div>
-
             </div>
-        </section>
+        </div>
+    </section>
 
-    </main>
-
-    <!-- Pied de page  -->
-    <footer>
-        <div class="footer-container">
-            
-            <!-- Colonne 1 : À Propos -->
-            <div class="footer-col about">
-                <h3>VLANSKY</h3>
-                <p>Simulateur Web3/Futuriste.<br>Propulsé par le code, corrompu par le glitch.</p>
-                <p class="copyright">© 2026 VLANSKY. Tous droits réservés.</p>
+    <!-- PORTALS SECTION -->
+    <section class="portals" id="portals">
+        <div class="container">
+            <div class="portal-grid">
+                <a href="https://discord.gg/9Z6ZVaE6cX" target="_blank" class="portal-banner cyan-portal" data-aos="zoom-in-right">
+                    <div class="portal-content">
+                        <i class="fa-brands fa-discord"></i>
+                        <h2>REJOINDRE LE RÉSEAU NEURAL</h2>
+                        <span>Communauté • Support • Mises à jour</span>
+                    </div>
+                    <div class="portal-overlay"></div>
+                </a>
+                
+                <a href="https://vlansky.tebex.io" target="_blank" class="portal-banner magenta-portal" data-aos="zoom-in-left">
+                    <div class="portal-content">
+                        <i class="fa-solid fa-store"></i>
+                        <h2>ACCÈS AU MARCHÉ NOIR</h2>
+                        <span>Grades • Clés • Avantages Exclusifs</span>
+                    </div>
+                    <div class="portal-overlay"></div>
+                </a>
             </div>
+        </div>
+    </section>
 
-            <!-- Colonne 2 : Navigation Système -->
-            <div class="footer-col nav">
-                <h4>NAVIGATION SYSTÈME</h4>
+    <!-- FOOTER -->
+    <footer class="cyber-footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <img src="assets/images/logo.png" alt="Vlansky Logo" class="footer-logo">
+                <p>Le premier Skyblock Futuriste Cyber-Glitch.</p>
+            </div>
+            <div class="footer-links">
+                <h4>LIENS UTILES</h4>
                 <ul>
-                    <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Accueil</a></li>
-                    <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Règlement</a></li>
-                    <li><a href="https://discord.vlansky.ovh" target="_blank"><i class="fa-solid fa-chevron-right"></i> Discord</a></li>
-                    <li><a href="https://discord.vlansky.ovh" target="_blank"><i class="fa-solid fa-chevron-right"></i> Support</a></li>
+                    <li><a href="mentions-legales.html">Mentions Légales & CGV</a></li>
+                    <li><a href="#hero">Voter pour le serveur</a></li>
+                    <li><a href="https://vlansky.tebex.io" target="_blank">Boutique</a></li>
                 </ul>
             </div>
-
-            <!-- Colonne 3 : État du réseau -->
-            <div class="footer-col status">
-                <h4>ÉTAT DU RÉSEAU</h4>
-                <div class="server-status-box">
-                    <div class="status-indicator">
-                        <span class="status-dot"></span>
-                        <span class="status-text">SYSTÈME EN LIGNE</span>
-                    </div>
-                    <div class="status-ip">PLAY.VLANSKY.OVH</div>
-                    <div class="status-players">12/200 OPÉRATEURS</div>
+            <div class="footer-socials">
+                <h4>TRANSMISSIONS</h4>
+                <div class="social-icons">
+                    <a href="https://www.youtube.com/@Vlansky" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/vlansky.mc/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@vlansky.mc" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://discord.gg/9Z6ZVaE6cX" target="_blank"><i class="fa-brands fa-discord"></i></a>
                 </div>
+                <div class="server-ip-mini">play.vlansky.ovh</div>
             </div>
-
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Vlansky. Tous droits réservés. Non affilié à Mojang AB.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
