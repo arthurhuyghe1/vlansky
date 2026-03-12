@@ -1,2 +1,2 @@
 # vlansky
-website 4 minecraft serveur
+website 4 minecraft server
