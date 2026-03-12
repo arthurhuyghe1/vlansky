@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vlansky - Serveur Minecraft</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts pour un look moderne -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;700;900&display=swap" rel="stylesheet">
+    <!-- Icônes FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Fond avec quadrillage cyan (pur CSS) -->
+    <div class="grid-background"></div>
+
+    <main class="container">
+        
+        <!-- En-tête avec Logo -->
+        <header class="hero">
+            <img src="assets/images/logo.png" alt="Vlansky Logo" class="main-logo">
+            <h1 class="visually-hidden">Vlansky Serveur Minecraft</h1>
+        </header>
+
+        <!-- Grille de cartes -->
+        <div class="cards-grid">
+            
+            <!-- Carte 1 -->
+            <a href="#" class="card hover-cyan">
+                <div class="card-content">
+                    <div class="card-icon"><i class="fa-solid fa-rocket"></i></div>
+                    <h2>Le Projet</h2>
+                    <p>Découvrez notre vision et les ambitions du serveur.</p>
+                </div>
+                <div class="glow-effect cyan-glow"></div>
+            </a>
+
+            <!-- Carte 2 -->
+            <a href="https://vlansky.tebex.io" target="_blank" class="card hover-magenta">
+                <div class="card-content">
+                    <div class="card-icon"><i class="fa-solid fa-gem"></i></div>
+                    <h2>Financement</h2>
+                    <p>Soutenez le développement et obtenez des avantages.</p>
+                </div>
+                <div class="glow-effect magenta-glow"></div>
+            </a>
+
+            <!-- Carte 3 -->
+            <a href="#" class="card hover-cyan">
+                <div class="card-content">
+                    <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h2>Sécurité</h2>
+                    <p>Un environnement de jeu protégé, équitable et surveillé.</p>
+                </div>
+                <div class="glow-effect cyan-glow"></div>
+            </a>
+
+            <!-- Carte 4 (Marché Noir avec sous-boutons) -->
+            <div class="card black-market hover-both">
+                <div class="card-content">
+                    <div class="card-icon"><i class="fa-solid fa-mask"></i></div>
+                    <h2>Marché Noir</h2>
+                    <p>Accédez aux services clandestins.</p>
+                    
+                    <div class="sub-buttons">
+                        <a href="https://vlansky.tebex.io/category/grades" target="_blank" class="btn btn-cyan">
+                            <i class="fa-solid fa-crown"></i> Grades
+                        </a>
+                        <a href="https://vlansky.tebex.io/category/vcoins" target="_blank" class="btn btn-magenta">
+                            <i class="fa-solid fa-coins"></i> VCoins
+                        </a>
+                    </div>
+                </div>
+                <div class="glow-effect dual-glow"></div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Pied de page -->
+    <footer>
+        <div class="footer-content">
+            
+            <!-- État du serveur -->
+            <div class="server-status">
+                <span class="status-dot"></span>
+                <span class="status-text">Système en ligne</span>
+            </div>
+
+            <!-- IP Copy Button -->
+            <div class="ip-container">
+                <button id="copy-ip-btn" class="copy-btn" data-ip="play.vlansky.ovh">
+                    <span class="ip-address">play.vlansky.ovh</span>
+                    <i class="fa-regular fa-copy copy-icon"></i>
+                    <span class="tooltip">Copier l'IP</span>
+                </button>
+            </div>
+
+            <!-- Navigation système -->
+            <nav class="system-nav">
+                <a href="#"><i class="fa-solid fa-house"></i> Accueil</a>
+                <a href="#"><i class="fa-solid fa-book"></i> Règlement</a>
+                <a href="https://discord.gg/9Z6ZVaE6cX" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>
+                <a href="https://discord.gg/9Z6ZVaE6cX" target="_blank"><i class="fa-solid fa-headset"></i> Support</a>
+            </nav>
+
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
