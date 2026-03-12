@@ -3,111 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vlansky - Serveur Minecraft</title>
+    <title>Vlansky - Le Skyblock Futuriste</title>
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts pour un look moderne -->
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;700;900&display=swap" rel="stylesheet">
+    
     <!-- Icônes FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Fond avec quadrillage cyan (pur CSS) -->
+    <!-- Fond quadrillé Cyberpunk -->
     <div class="grid-background"></div>
+
+    <!-- Navigation haute (Haut de page simpliste) -->
+    <nav class="top-nav">
+        <a href="#" class="top-login-link">Login</a>
+    </nav>
 
     <main class="container">
         
-        <!-- En-tête avec Logo -->
+        <!-- En-tête : Logo Vlansky Glitch & Sous-Titre -->
         <header class="hero">
-            <img src="assets/images/logo.png" alt="Vlansky Logo" class="main-logo">
-            <h1 class="visually-hidden">Vlansky Serveur Minecraft</h1>
+            <div class="logo-container glitch">
+                <img src="assets/images/logo.png" alt="Vlansky Logo" class="main-logo">
+            </div>
+            
+            <div class="hero-title-group">
+                <h1 class="main-title">VLANSKY</h1>
+                <h2 class="sub-title">LE SKYBLOCK FUTURISTE</h2>
+            </div>
+            
+            <button id="copy-ip-btn" class="ip-btn glitch-hover" data-ip="play.vlansky.ovh">
+                <i class="fa-solid fa-play"></i> IP: PLAY.VLANSKY.OVH
+                <span class="tooltip">Copier l'IP</span>
+            </button>
         </header>
 
-        <!-- Grille de cartes -->
-        <div class="cards-grid">
+        <!-- Grille de cartes Info (Haut - 3 colonnes) -->
+        <div class="cards-grid-top">
             
             <!-- Carte 1 -->
-            <a href="#" class="card hover-cyan">
-                <div class="card-content">
-                    <div class="card-icon"><i class="fa-solid fa-rocket"></i></div>
-                    <h2>Le Projet</h2>
-                    <p>Découvrez notre vision et les ambitions du serveur.</p>
+            <div class="card info-card hover-cyan">
+                <div class="card-header">
+                    <i class="fa-solid fa-earth-americas icon-cyan"></i>
+                    <h3>LE PROJET</h3>
                 </div>
-                <div class="glow-effect cyan-glow"></div>
-            </a>
+                <div class="card-body">
+                    <p>Bienvenue dans la matrice. VLANSKY redéfinit le Skyblock avec des mécaniques <strong>Slimefun</strong> avancées (Exotic Garden, Infinity Expansion).</p>
+                </div>
+                <div class="glow-border"></div>
+            </div>
 
             <!-- Carte 2 -->
-            <a href="https://vlansky.tebex.io" target="_blank" class="card hover-magenta">
-                <div class="card-content">
-                    <div class="card-icon"><i class="fa-solid fa-gem"></i></div>
-                    <h2>Financement</h2>
-                    <p>Soutenez le développement et obtenez des avantages.</p>
+            <div class="card info-card hover-magenta">
+                <div class="card-header">
+                    <i class="fa-solid fa-gem icon-magenta"></i>
+                    <h3>FINANCEMENT</h3>
                 </div>
-                <div class="glow-effect magenta-glow"></div>
-            </a>
+                <div class="card-body">
+                    <p>100% communautaire. Chaque achat finance la machine dédiée et le développement continu d'addons inédits.</p>
+                </div>
+                <div class="glow-border"></div>
+            </div>
 
             <!-- Carte 3 -->
-            <a href="#" class="card hover-cyan">
-                <div class="card-content">
-                    <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                    <h2>Sécurité</h2>
-                    <p>Un environnement de jeu protégé, équitable et surveillé.</p>
+            <div class="card info-card hover-yellow">
+                <div class="card-header">
+                    <i class="fa-solid fa-lock icon-yellow"></i>
+                    <h3>SÉCURITÉ</h3>
                 </div>
-                <div class="glow-effect cyan-glow"></div>
-            </a>
-
-            <!-- Carte 4 (Marché Noir avec sous-boutons) -->
-            <div class="card black-market hover-both">
-                <div class="card-content">
-                    <div class="card-icon"><i class="fa-solid fa-mask"></i></div>
-                    <h2>Marché Noir</h2>
-                    <p>Accédez aux services clandestins.</p>
-                    
-                    <div class="sub-buttons">
-                        <a href="https://vlansky.tebex.io/category/grades" target="_blank" class="btn btn-cyan">
-                            <i class="fa-solid fa-crown"></i> Grades
-                        </a>
-                        <a href="https://vlansky.tebex.io/category/vcoins" target="_blank" class="btn btn-magenta">
-                            <i class="fa-solid fa-coins"></i> VCoins
-                        </a>
-                    </div>
+                <div class="card-body">
+                    <p>Transactions chiffrées par Tebex. Aucune donnée bancaire stockée. Un environnement anti-cheat omniprésent.</p>
                 </div>
-                <div class="glow-effect dual-glow"></div>
+                <div class="glow-border"></div>
+            </div>
+            
+            <!-- Carte 4 -->
+            <div class="card info-card hover-orange">
+                <div class="card-header">
+                    <i class="fa-solid fa-bolt icon-orange"></i>
+                    <h3>LIVRAISON</h3>
+                </div>
+                <div class="card-body">
+                    <p>Automatique (< 5 min). Assurez-vous d'être connecté en jeu sur le serveur Skyblock.</p>
+                </div>
+                <div class="glow-border"></div>
             </div>
 
         </div>
 
+        <!-- Section Marché Noir (Milieu - 2 Grandes Boutiques) -->
+        <section class="black-market-section">
+            <h2 class="section-title">ACCÈS AU <span class="text-magenta glitch" data-text="MARCHÉ NOIR">MARCHÉ NOIR</span></h2>
+            
+            <div class="store-grid">
+                
+                <!-- Carte Grade -->
+                <div class="card store-card">
+                    <h3>GRADE</h3>
+                    <a href="https://vlansky.tebex.io/category/grades" class="btn store-btn">OUVRIR <i class="fa-solid fa-chevron-right"></i></a>
+                    <div class="glow-border"></div>
+                </div>
+
+                <!-- Carte VCoins -->
+                <div class="card store-card">
+                    <h3>VCOINS</h3>
+                    <a href="https://vlansky.tebex.io/category/vcoins" class="btn store-btn">OUVRIR <i class="fa-solid fa-chevron-right"></i></a>
+                    <div class="glow-border"></div>
+                </div>
+
+            </div>
+        </section>
+
     </main>
 
-    <!-- Pied de page -->
+    <!-- Pied de page  -->
     <footer>
-        <div class="footer-content">
+        <div class="footer-container">
             
-            <!-- État du serveur -->
-            <div class="server-status">
-                <span class="status-dot"></span>
-                <span class="status-text">Système en ligne</span>
+            <!-- Colonne 1 : À Propos -->
+            <div class="footer-col about">
+                <h3>VLANSKY</h3>
+                <p>Simulateur Web3/Futuriste.<br>Propulsé par le code, corrompu par le glitch.</p>
+                <p class="copyright">© 2026 VLANSKY. Tous droits réservés.</p>
             </div>
 
-            <!-- IP Copy Button -->
-            <div class="ip-container">
-                <button id="copy-ip-btn" class="copy-btn" data-ip="play.vlansky.ovh">
-                    <span class="ip-address">play.vlansky.ovh</span>
-                    <i class="fa-regular fa-copy copy-icon"></i>
-                    <span class="tooltip">Copier l'IP</span>
-                </button>
+            <!-- Colonne 2 : Navigation Système -->
+            <div class="footer-col nav">
+                <h4>NAVIGATION SYSTÈME</h4>
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Accueil</a></li>
+                    <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Règlement</a></li>
+                    <li><a href="https://discord.vlansky.ovh" target="_blank"><i class="fa-solid fa-chevron-right"></i> Discord</a></li>
+                    <li><a href="https://discord.vlansky.ovh" target="_blank"><i class="fa-solid fa-chevron-right"></i> Support</a></li>
+                </ul>
             </div>
 
-            <!-- Navigation système -->
-            <nav class="system-nav">
-                <a href="#"><i class="fa-solid fa-house"></i> Accueil</a>
-                <a href="#"><i class="fa-solid fa-book"></i> Règlement</a>
-                <a href="https://discord.gg/9Z6ZVaE6cX" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>
-                <a href="https://discord.gg/9Z6ZVaE6cX" target="_blank"><i class="fa-solid fa-headset"></i> Support</a>
-            </nav>
+            <!-- Colonne 3 : État du réseau -->
+            <div class="footer-col status">
+                <h4>ÉTAT DU RÉSEAU</h4>
+                <div class="server-status-box">
+                    <div class="status-indicator">
+                        <span class="status-dot"></span>
+                        <span class="status-text">SYSTÈME EN LIGNE</span>
+                    </div>
+                    <div class="status-ip">PLAY.VLANSKY.OVH</div>
+                    <div class="status-players">12/200 OPÉRATEURS</div>
+                </div>
+            </div>
 
         </div>
     </footer>

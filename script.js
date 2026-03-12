@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const copyBtn = document.getElementById('copy-ip-btn');
     const ipAddress = copyBtn.getAttribute('data-ip');
     const tooltip = copyBtn.querySelector('.tooltip');
-    const copyIcon = copyBtn.querySelector('.copy-icon');
+    const icon = copyBtn.querySelector('i');
     
     // Copy IP Functionality
     copyBtn.addEventListener('click', async () => {
@@ -14,64 +14,41 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Visual feedback success
             copyBtn.classList.add('copied');
-            tooltip.textContent = "IP Copiée !";
-            copyIcon.classList.remove('fa-copy');
-            copyIcon.classList.remove('fa-regular');
-            copyIcon.classList.add('fa-solid');
-            copyIcon.classList.add('fa-check');
+            tooltip.textContent = "COPIÉE !";
+            icon.classList.remove('fa-play');
+            icon.classList.add('fa-check');
+            
+            // Add a temporary glitch effect class to the button
+            copyBtn.classList.add('glitch');
+            copyBtn.setAttribute('data-text', copyBtn.textContent.trim());
             
             // Revert after 2.5 seconds
             setTimeout(() => {
                 copyBtn.classList.remove('copied');
+                copyBtn.classList.remove('glitch');
                 tooltip.textContent = "Copier l'IP";
-                copyIcon.classList.remove('fa-solid');
-                copyIcon.classList.remove('fa-check');
-                copyIcon.classList.add('fa-regular');
-                copyIcon.classList.add('fa-copy');
+                icon.classList.remove('fa-check');
+                icon.classList.add('fa-play');
             }, 2500);
             
         } catch (err) {
             console.error('Erreur lors de la copie de l\'IP: ', err);
-            tooltip.textContent = "Erreur de copie";
+            tooltip.textContent = "ERREUR";
             
             setTimeout(() => {
                 tooltip.textContent = "Copier l'IP";
             }, 2000);
         }
     });
+
+    // Optional subtle parallax on the grid background relative to mouse
+    const gridBg = document.querySelector('.grid-background');
     
-    // Optional: Interactive glow follow mouse on cards
-    const cards = document.querySelectorAll('.card');
-    
-    cards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            // Subtly move the glow effect towards the mouse cursor
-            const glow = card.querySelector('.glow-effect');
-            if(glow) {
-                // If the element has a specific glow class, we can adjust the radial gradient center
-                if(glow.classList.contains('cyan-glow')) {
-                    glow.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(0, 255, 255, 0.4) 0%, transparent 60%)`;
-                } else if(glow.classList.contains('magenta-glow')) {
-                    glow.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255, 0, 255, 0.4) 0%, transparent 60%)`;
-                } else if(glow.classList.contains('dual-glow')) {
-                    // For dual glow, maybe just standard hover is enough since it's complex, 
-                    // but we can add a subtle combined effect
-                    glow.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(0, 255, 255, 0.3) 0%, transparent 40%),
-                                             radial-gradient(circle at ${rect.width - x}px ${rect.height - y}px, rgba(255, 0, 255, 0.3) 0%, transparent 40%)`;
-                }
-            }
-        });
+    document.addEventListener('mousemove', (e) => {
+        const x = (e.clientX / window.innerWidth - 0.5) * 20; 
+        const y = (e.clientY / window.innerHeight - 0.5) * 20;
         
-        card.addEventListener('mouseleave', () => {
-            const glow = card.querySelector('.glow-effect');
-            if(glow) {
-                glow.style.background = ''; // Reset to CSS default
-            }
-        });
+        // Move the grid very slightly opposite to cursor
+        gridBg.style.transform = `translate(${-x}px, ${-y}px)`;
     });
-    
 });
