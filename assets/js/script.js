@@ -65,4 +65,71 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 100);
         });
     });
+
+    // Terminal Animation Logic
+    const terminal = document.getElementById('cyber-terminal');
+    if (terminal) {
+        const lines = [
+            { text: "INITIALIZING V-OS v2.0.4...", type: "sys", delay: 800 },
+            { text: "Connecting to play.vlansky.ovh", type: "sys", delay: 500 },
+            { text: "[OK] Connection established. Latency: 12ms", type: "succ", delay: 600 },
+            { text: "Loading modules: Slimefun, InfinityExpansion, ExoticGarden...", type: "sys", delay: 1000 },
+            { text: "WARNING: High energy signature detected in Sector 7", type: "warn", delay: 800 },
+            { text: "Bypassing security protocols...", type: "magenta", delay: 1200 },
+            { text: "Accessing Black Market Database...", type: "cyan", delay: 600 },
+            { text: "[ERROR] Unauthorized access attempt blocked.", type: "err", delay: 1000 },
+            { text: "Re-routing neural pathways...", type: "sys", delay: 800 },
+            { text: "Welcome to Vlansky, Operative.", type: "succ", delay: 2000 },
+            { text: "Awaiting input...", type: "sys", delay: 3000 }
+        ];
+
+        let currentLine = 0;
+        
+        function typeLine(lineData) {
+            if (currentLine >= lines.length) {
+                setTimeout(() => {
+                    terminal.innerHTML = '';
+                    currentLine = 0;
+                    typeLine(lines[0]);
+                }, 5000);
+                return;
+            }
+
+            const lineElem = document.createElement('div');
+            lineElem.className = `term-line ${lineData.type}`;
+            terminal.appendChild(lineElem);
+            
+            const cursor = document.createElement('span');
+            cursor.className = 'term-cursor';
+            terminal.appendChild(cursor);
+
+            let charIndex = 0;
+            const typeInterval = setInterval(() => {
+                if (charIndex < lineData.text.length) {
+                    lineElem.textContent += lineData.text.charAt(charIndex);
+                    charIndex++;
+                    terminal.scrollTop = terminal.scrollHeight;
+                } else {
+                    clearInterval(typeInterval);
+                    setTimeout(() => {
+                        // Safety check in case cursor was already removed or terminal cleared
+                        if(terminal.contains(cursor)) {
+                            terminal.removeChild(cursor);
+                        }
+                        currentLine++;
+                        typeLine(lines[currentLine]);
+                    }, lineData.delay);
+                }
+            }, 30);
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            if(entries[0].isIntersecting) {
+                terminal.innerHTML = '';
+                typeLine(lines[0]);
+                observer.unobserve(terminal);
+            }
+        }, { threshold: 0.5 });
+        observer.observe(terminal);
+    }
 });
