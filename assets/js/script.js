@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: "Loading modules: Slimefun, InfinityExpansion, ExoticGarden...", type: "sys", delay: 1000 },
             { text: "WARNING: High energy signature detected in Sector 7", type: "warn", delay: 800 },
             { text: "Bypassing security protocols...", type: "magenta", delay: 1200 },
-            { text: "Accessing Black Market Database...", type: "cyan", delay: 600 },
+            { text: "Accessing Server Store Database...", type: "cyan", delay: 600 },
             { text: "[ERROR] Unauthorized access attempt blocked.", type: "err", delay: 1000 },
             { text: "Re-routing neural pathways...", type: "sys", delay: 800 },
             { text: "Welcome to Vlansky, Operative.", type: "succ", delay: 2000 },
