@@ -1,5 +1,3 @@
----
-
 ## 🎮 Vlansky - Site Officiel
 
 - **Hébergement du site web statique** du serveur
